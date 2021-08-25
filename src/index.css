@@ -1,13 +1,174 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Josefin Sans";
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: hsl(234, 11%, 52%);
+}
+li {
+  list-style: none;
+}
+.container {
+  position: relative;
+  background: hsl(235, 21%, 11%);
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bannerImg {
+  width: 100%;
+  height: 30vh;
+}
+.todoWrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1rem;
+}
+
+.card {
+  background: hsl(235, 24%, 19%);
+  border-radius: 5px;
+}
+.todoItem {
+  color: hsl(236, 33%, 92%);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1.2rem;
+  border-bottom: 1px solid hsl(237, 14%, 26%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.todoInput {
+  width: 500;
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 20px;
+  background: hsl(235, 24%, 19%);
+  border-radius: 5px;
+}
+input {
+  height: 100%;
+  background: hsl(235, 24%, 19%);
+  border: none;
+  width: 400px;
+  font-size: 18px;
+  color: hsl(236, 33%, 92%);
+  caret-color: hsl(220, 98%, 61%);
+}
+input[type="text"] {
+  outline: none;
+}
+.checkWrapperDark {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 2px solid hsl(237, 14%, 26%);
+}
+.checkWrapperLight {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 2px solid hsl(233, 11%, 84%);
+}
+.todoItem:hover .checkWrapperLight {
+  border: double 1.5px transparent;
+  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 98%)),
+    /*here must be*/ linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)); /*both gradients*/
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.todoItem:hover .checkWrapperDark {
+  border: double 1.5px transparent;
+  background-image: linear-gradient(hsl(235, 24%, 19%), hsl(235, 24%, 19%)),
+    /*here must be*/ linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)); /*both gradients*/
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.checkIcon {
+  margin-left: 3px;
+  display: none;
+}
+.todoText {
+  display: flex;
+  margin-right: auto;
+}
+.todoText p {
+  margin-top: 4px;
+}
+.todoItem:hover .iconCross {
+  display: block;
+}
+.iconCross {
+  display: none;
+}
+.cardFooter {
+  padding: 1.2rem;
+  color: hsl(234, 11%, 52%);
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu li a {
+  margin: 0 10px;
+}
+
+li a:hover {
+  color: hsl(236, 33%, 92%);
+}
+.mblFooter .menu {
+  display: none;
+}
+.lightContainer {
+  background: hsl(0, 0%, 93%);
+}
+.light {
+  background: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
+  border-color: hsl(233, 11%, 84%);
+}
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+  .todoWrapper {
+    width: 90%;
+  }
+  .menu {
+    display: none;
+  }
+  input {
+    width: 300px;
+  }
+  .mblFooter .menu {
+    display: flex;
+    padding: 1.3rem;
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 1.3rem;
+  }
 }
